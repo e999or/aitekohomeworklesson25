@@ -14,31 +14,31 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ReviewButton {
 
-    @Тогда("нажать вкладку \"Обзор\"")
+  //  @Тогда("нажать вкладку \"Обзор\"")
     ReviewButton clikIdButton(){
         $ (By.id("bank-overview")).click();
         return this;
     }
 
-    @Тогда("нажать на поле \"Финансовая свобода\", которое содержит сумму")
+  //  @Тогда("нажать на поле \"Финансовая свобода\", которое содержит сумму")
     ReviewButton clikxPathButton(){
        $ (By.xpath("//small[@class='my-assets']")).click();
        return this;
     }
-    @Когда("откроется вкладка \"Обзор\" проверить появилась ли надпись :\"Финансовая свобода\"")
+   // @Когда("откроется вкладка \"Обзор\" проверить появилась ли надпись :\"Финансовая свобода\"")
     ReviewButton inspectFild(){
         String text = $(By.id("can-spend")).getAttribute("innerText");
         Assert.assertTrue((text).contains("Финансовая свобода"));
         return this;
     }
 
-    @Когда("откроется новая страница проверить есть ли в title надпись:\"Старт -  Интернет банк - Банк Санкт-Петербург\"")
+   // @Когда("откроется новая страница проверить есть ли в title надпись:\"Старт -  Интернет банк - Банк Санкт-Петербург\"")
     ReviewButton inspectPreReview(){
         Assert.assertEquals($("title").getAttribute("innerText"), "Старт -  Интернет банк - Банк Санкт-Петербург");
         return this;
     }
 
-    @И("в появившейся сумме проверить соответствует ли она типу : 123 456 789.00 \u20BD")
+   // @И("в появившейся сумме проверить соответствует ли она типу : 123 456 789.00 \u20BD")
     ReviewButton inspectTipe(){
         String str = $(By.xpath("//small[@class='my-assets']")).getAttribute("innerText");
         String sy = String.valueOf(new StringBuffer(str).delete(0,14));
