@@ -3,7 +3,7 @@
 <suite name="TestNG">
     <test name="avtoQA">
         <classes>
-            <class name="com.github.e999or.lesson25.SimpleTest"/>
+            <class name="cucumber.CucumberRuner"/>
         </classes>
     </test>
 </suite>

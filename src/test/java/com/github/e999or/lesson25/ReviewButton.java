@@ -42,7 +42,7 @@ public class ReviewButton {
     ReviewButton inspectTipe(){
         String str = $(By.xpath("//small[@class='my-assets']")).getAttribute("innerText");
         String sy = String.valueOf(new StringBuffer(str).delete(0,14));
-        Matcher matcher = (Pattern.compile("^[0-9]{1,3} [0-9]{3} [0-9]{3}[.]{1}[0-9]{2} [\u20BD]{1}$")).matcher(sy);
+        Matcher matcher = (Pattern.compile("")).matcher(sy);
         Assert.assertTrue(matcher.find());
         return this;
     }
